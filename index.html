@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Vades Djoko - Informatik Student</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome für Icons (optional, aber empfohlen) -->
+    <!-- Font Awesome für Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">Vades</div>
+            <div class="logo">Vades Djoko</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Über mich</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#modules">Module</a></li>
+                <li><a href="#projects">Projekte</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </div>
@@ -27,12 +27,12 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-text">
-                <h1>Hallo, ich bin <span class="highlight">Vades</span></h1>
+                <h1>Hallo, ich bin <span class="highlight">Vades !</span></h1>
                 <h2>Informatik Student & angehender Werkstudent</h2>
-                <p>Bachelor of Science Informatik an der THM </p>
+                <p>Bachelor of Science Informatik an der THM</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn primary">Kontakt aufnehmen</a>
-                    <a href="#skills" class="btn secondary">Meine Skills</a>
+                    <a href="https://github.com/Monsieur-v237" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub Profil</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -50,14 +50,14 @@
             <h2 class="section-title">Über mich</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Ich bin Informatik-Student an der Technischen Hochschule Mittelhessen mit einer aktuellen Gesamtnote von <strong>3,06</strong>. Meine Stärken liegen in der <strong>systemnahen Programmierung mit C</strong> sowie in Algorithmen und Datenstrukturen (Note 1,4 in Theoretische Informatik 2).</p>
-                    <p>Als gebürtiger Franzose bringe ich internationale Perspektive mit und kommuniziere fließend auf Deutsch (C1) und Französisch. Zusätzlich zu meinen technischen Fähigkeiten beherrsche ich kreative Tools wie <strong>Photoshop, Premiere Pro und Figma</strong>.</p>
-                    <p>Ich suche eine spannende Werkstudententätigkeit, um meine Kenntnisse in der Praxis anzuwenden und weiterzuentwickeln.</p>
+                    <p>Ich bin Informatik-Student an der Technischen Hochschule Mittelhessen mit einer Leidenschaft für <strong>Java-Programmierung</strong> und <strong>moderne Webentwicklung</strong>. Mein Fokus liegt auf der Entwicklung skalierbarer Backend-Systeme mit Vert.x und der Integration verschiedener Technologien zu vollständigen, containerisierten Anwendungen.</p>
+                    <p>Ich spreche fließend Deutsch (C1) und Französisch. Außerdem habe ich Grundkenntnisse in kreativen Tools wie <strong>Photoshop, Premiere Pro und Figma</strong>, die ich gelegentlich für UI-Designs nutze.</p>
+                    <p>Auf meinem <a href="https://github.com/Monsieur-v237" target="_blank">GitHub-Profil</a> findest du meine bisherigen Projekte – darunter ein komplexes Simon Game mit Microservice-Architektur. Ich suche eine spannende Werkstudententätigkeit, um meine Kenntnisse in der Praxis anzuwenden und weiterzuentwickeln.</p>
                 </div>
                 <div class="about-info">
                     <div class="info-item">
                         <span class="info-label">Sprachen:</span>
-                        <span class="info-value">Deutsch (C1), Französisch (Muttersprache), Englisch (Grundlagen)</span>
+                        <span class="info-value">Deutsch (C1), Französisch (fließend), Englisch (Grundlagen)</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">Studium:</span>
@@ -80,73 +80,114 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Programmiersprachen</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-name">C</span> <span class="skill-level excellent">Sehr gut</span></li>
-                        <li><span class="skill-name">Java</span> <span class="skill-level good">Gut</span></li>
-                        <li><span class="skill-name">TypeScript/JavaScript</span> <span class="skill-level good">Gut</span></li>
+                        <li><span class="skill-name">Java</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">JavaScript/TypeScript</span> <span class="skill-level good">Fortgeschritten</span></li>
                         <li><span class="skill-name">Python</span> <span class="skill-level basic">Grundlagen</span></li>
+                        <li><span class="skill-name">C</span> <span class="skill-level basic">Grundlagen</span></li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-microchip"></i> Technische Informatik</h3>
+                    <h3><i class="fas fa-server"></i> Backend & Frameworks</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-name">Mikrocontroller</span> <span class="skill-level good">Gut</span></li>
-                        <li><span class="skill-name">Eingebettete Systeme</span> <span class="skill-level good">Gut</span></li>
-                        <li><span class="skill-name">Betriebssysteme</span> <span class="skill-level good">Gut</span></li>
+                        <li><span class="skill-name">Vert.x</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">Java SE</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">REST APIs</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">Spring Boot</span> <span class="skill-level basic">Grundlagen</span></li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Web & Datenbanken</h3>
+                    <h3><i class="fas fa-database"></i> Datenbanken & DevOps</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-name">SQL</span> <span class="skill-level good">Gut</span></li>
-                        <li><span class="skill-name">Client/Server</span> <span class="skill-level good">Gut</span></li>
-                        <li><span class="skill-name">Verteile Systeme</span> <span class="skill-level good">Gut</span></li>
+                        <li><span class="skill-name">MariaDB/MySQL</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">Docker</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">MQTT</span> <span class="skill-level good">Fortgeschritten</span></li>
+                        <li><span class="skill-name">phpMyAdmin</span> <span class="skill-level good">Fortgeschritten</span></li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-paint-brush"></i> Kreativ-Tools</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-name">Photoshop</span> <span class="skill-level excellent">Sehr gut</span></li>
-                        <li><span class="skill-name">Premiere Pro</span> <span class="skill-level excellent">Sehr gut</span></li>
-                        <li><span class="skill-name">Figma</span> <span class="skill-level excellent">Sehr gut</span></li>
+                        <li><span class="skill-name">Photoshop</span> <span class="skill-level basic">Grundlagen</span></li>
+                        <li><span class="skill-name">Premiere Pro</span> <span class="skill-level basic">Grundlagen</span></li>
+                        <li><span class="skill-name">Figma</span> <span class="skill-level basic">Grundlagen</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modules Section (Akademische Erfolge) -->
-    <section id="modules" class="modules">
+    <!-- Projects Section mit kompaktem Simon Game -->
+    <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Akademische Erfolge</h2>
-            <div class="modules-grid">
-                <div class="module-card highlight">
-                    <div class="module-name">Theoretische Informatik 2</div>
-                    <div class="module-grade">Note: 1,4</div>
-                    <div class="module-desc">Algorithmen & Datenstrukturen</div>
+            <h2 class="section-title">Meine GitHub Projekte</h2>
+            <div class="projects-grid">
+                <!-- Projekt 1 - Simon Game (kompakte Version) -->
+                <div class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Simon Game - Multiplayer Gedächtnisspiel</h3>
+                    <p class="project-subtitle">Moderne webbasierte Implementierung mit Microservice-Architektur</p>
+                    
+                    <div class="project-description">
+                        <p>Eine Erweiterung des klassischen Simon-Spiels mit Mehrspieler-Funktionalität. Das System besteht aus mehreren Docker-Containern: Java Backend mit Vert.x, MariaDB Datenbank, MQTT Broker und Nginx Webserver.</p>
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Vert.x</span>
+                        <span class="tech-tag">MariaDB</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">MQTT</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/Monsieur-v237/simon_game" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Repository
+                        </a>
+                    </div>
                 </div>
-                <div class="module-card">
-                    <div class="module-name">Technische Informatik 1</div>
-                    <div class="module-grade">Note: 2,5</div>
+
+                <!-- Projekt 2 - Projet_Tibati -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Projet Tibati</h3>
+                    <p>Webentwicklungsprojekt in aktiver Entwicklung. Weitere Details folgen bald!</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Monsieur-v237/Projet_Tibati" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Repository
+                        </a>
+                    </div>
                 </div>
-                <div class="module-card">
-                    <div class="module-name">Informatik-Projekt</div>
-                    <div class="module-grade">Note: 2,4</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-name">Programmieren 1</div>
-                    <div class="module-grade">Note: 2,9</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-name">Programmieren 2</div>
-                    <div class="module-grade">Note: 3,9</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-name">Praktische Informatik 1</div>
-                    <div class="module-grade">Note: 3,5</div>
+
+                <!-- Platz für zukünftige Projekte -->
+                <div class="project-card coming-soon">
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Weitere Projekte</h3>
+                    <p>Aktuell in Entwicklung. Schau bald wieder vorbei!</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">In Arbeit</span>
+                    </div>
                 </div>
             </div>
-            <div class="module-note">
-                <p><i class="fas fa-info-circle"></i> Aktuelle Gesamtnote: <strong>3,06</strong> | 6. Semester (voraussichtlich)</p>
+
+            <!-- GitHub Profil Link -->
+            <div class="github-profile-link">
+                <p>
+                    <i class="fab fa-github"></i> 
+                    Weitere Details und Code findest du auf meinem GitHub-Profil: 
+                    <a href="https://github.com/Monsieur-v237" target="_blank">github.com/Monsieur-v237</a>
+                </p>
             </div>
         </div>
     </section>
@@ -158,7 +199,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Interesse an einer Zusammenarbeit?</h3>
-                    <p>Ich bin ab sofort als Werkstudent verfügbar und freue mich über Ihre Nachricht!</p>
+                    <p>Ich bin ab sofort als Werkstudent verfügbar und freue mich über Ihre Nachricht! Mein Schwerpunkt liegt auf Java-Entwicklung mit Vert.x und Docker.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -189,11 +230,11 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 [Ihr Name]. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Vades Djoko. Alle Rechte vorbehalten.</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-xing"></i></a>
+                <a href="https://github.com/Monsieur-v237" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-xing"></i></a>
             </div>
         </div>
     </footer>
