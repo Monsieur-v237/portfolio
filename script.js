@@ -1,4 +1,9 @@
 // Gestion du formulaire de contact
+(function() {
+    // Initialiser EmailJS avec votre clé publique
+    emailjs.init('YOUR_PUBLIC_KEY'); // Remplacez par votre clé publique EmailJS
+})();
+
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Empêche la soumission par défaut
 
@@ -7,32 +12,23 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     const email = document.querySelector('input[type="email"]').value;
     const message = document.querySelector('textarea').value;
 
-    // Création des données à envoyer
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('_replyto', email); // Pour que Formspree réponde à l'email de l'utilisateur
-    formData.append('message', message);
+    // Paramètres pour EmailJS
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        to_name: 'Vades Djoko', // Nom du destinataire
+        message: message,
+    };
 
-    // Envoi via Formspree (remplacez YOUR_FORM_ID par votre ID Formspree)
-    fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
+    // Envoi via EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams) // Remplacez par vos IDs EmailJS
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
             alert('Nachricht erfolgreich gesendet!');
             // Réinitialiser le formulaire
             document.getElementById('contact-form').reset();
-        } else {
+        }, function(error) {
+            console.log('FAILED...', error);
             alert('Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.');
-        }
-    })
-    .catch(error => {
-        console.error('Erreur:', error);
-        alert('Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.');
-    });
+        });
 });
