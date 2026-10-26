@@ -751,32 +751,28 @@ body {
     width: 25px;
 }
 
-.contact-form {
+.contact-cta {
     background: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: var(--border-radius);
-    font-family: inherit;
-    transition: border-color 0.3s;
+.contact-cta h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
+.contact-cta p {
+    color: var(--text-light);
 }
 
-.contact-form button {
-    width: 100%;
+.contact-cta .btn {
+    text-align: center;
 }
 
 /* ===== FOOTER ===== */
