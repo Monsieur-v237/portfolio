@@ -521,10 +521,9 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
-    grid-auto-rows: 1fr;
 }
 
 .project-card {
@@ -564,39 +563,72 @@ body {
     transform: scaleX(1);
 }
 
-.project-card.featured {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 2px solid var(--primary-color);
-    position: relative;
+.project-card.project-wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: center;
 }
 
-.project-card.featured::after {
-    content: '★ DESTAQUE';
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
+.project-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.project-facts {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.project-facts > div {
+    margin-bottom: 0.9rem;
+}
+
+.project-facts dt {
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
 }
 
-.project-card.featured:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+.project-facts dd {
+    color: var(--text-light);
+    font-size: 0.95rem;
 }
 
-.project-card.coming-soon {
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.05) 0%, rgba(100, 116, 139, 0.02) 100%);
-    opacity: 0.8;
+.project-figure {
+    margin: 0;
+    min-width: 0;
 }
 
-.project-card.coming-soon:hover {
-    opacity: 1;
+.project-figure svg {
+    width: 100%;
+    height: auto;
+    display: block;
 }
+
+.project-figure figcaption {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.75rem;
+}
+
+/* Architekturskizze */
+.arch-docker { fill: var(--light-bg); stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 6 4; }
+.arch-client { fill: var(--white); stroke: #94a3b8; stroke-width: 1.5; }
+.arch-box { fill: var(--white); stroke: var(--primary-color); stroke-width: 1.5; }
+.arch-own { fill: rgba(37, 99, 235, 0.12); stroke: var(--primary-color); stroke-width: 2.5; }
+.arch-label { font-size: 14px; font-weight: 600; fill: var(--text-dark); text-anchor: middle; }
+.arch-sub { font-size: 12px; fill: var(--text-light); text-anchor: middle; }
+.arch-caption { font-size: 12px; fill: var(--text-light); }
+.arch-edge { font-size: 11px; font-weight: 600; fill: var(--text-light); text-anchor: middle; }
+.arch-edge-left { text-anchor: start; }
+.arch-line { stroke: #64748b; stroke-width: 1.5; fill: none; }
+.arch-mqtt { stroke-dasharray: 4 3; }
+.arch-arrowhead { fill: #64748b; }
 
 .project-icon {
     font-size: 3rem;
@@ -966,12 +998,23 @@ footer .container {
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
-    .project-card.featured {
-        grid-column: 1;
-        grid-row: auto;
+    .project-card.project-wide {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-figure .figure-scroll {
+        overflow-x: auto;
+    }
+
+    .project-figure svg {
+        min-width: 520px;
     }
 
     footer .container {
@@ -980,14 +1023,13 @@ footer .container {
     }
 }
 
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
 @media (max-width: 1024px) and (min-width: 769px) {
     .timeline {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card.project-wide {
+        grid-template-columns: 1fr;
     }
 }
 
