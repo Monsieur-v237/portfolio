@@ -91,6 +91,18 @@ body {
     color: var(--primary-color);
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
 /* ===== HERO SECTION ===== */
 .hero {
     min-height: 100vh;
@@ -806,8 +818,32 @@ footer .container {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .nav-menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        padding: 0.5rem 20px 1rem;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.75rem 0;
     }
 
     .hero-container,
@@ -865,3 +901,4 @@ footer .container {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
