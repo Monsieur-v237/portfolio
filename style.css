@@ -1406,3 +1406,13 @@ html {
         grid-row: 1 / span 2;
     }
 }
+
+.timeline-org a {
+    color: var(--primary-color);
+}
+
+.timeline-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
