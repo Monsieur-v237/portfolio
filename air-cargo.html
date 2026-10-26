@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air-Cargo-Performance (Übungsfall) | Vades Djoko</title>
+    <meta name="description" content="Lernprojekt mit synthetischen Daten: Datenbereinigung, KPI-Definition und Ursachenanalyse für ein Luftfracht-Lager mit Python, SQL und TypeScript.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vades Djoko</a>
+            <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Alle Projekte</a>
+        </div>
+    </nav>
+
+    <main class="case">
+        <header class="case-header">
+            <div class="container">
+                <p class="case-badge"><i class="fas fa-flask" aria-hidden="true"></i> Übungsfall mit synthetischen Daten · Lernprojekt</p>
+                <h1>Air-Cargo-Performance</h1>
+                <p class="case-lead">Wo verliert ein Luftfracht-Lager Zeit, welche Sendungen verfehlen die Pufferzeit vor dem Abflug, und woran liegt das?</p>
+                <div class="case-notice" role="note">
+                    <strong>Hinweis:</strong> Kein Kunden- oder Firmenprojekt. Der Datensatz ist künstlich erzeugt und enthält absichtlich eingebaute Fehler. Die Zahlen beschreiben keinen echten Betrieb.
+                </div>
+            </div>
+        </header>
+
+        <section class="case-section">
+            <div class="container">
+                <h2>Daten und Vorgehen</h2>
+                <p class="case-text">Zwei Tabellen: Sendungen (4.500 nach Bereinigung) und Flüge (350), Juli bis September 2026.</p>
+                <ol class="steps">
+                    <li>
+                        <h3>Daten bereinigen</h3>
+                        <p>Schreibweisen von Schicht, Zone und Airline vereinheitlichen, gemischte Datumsformate parsen, <em>danach</em> Duplikate entfernen. Unplausible Werte werden geleert statt geraten; jede Änderung landet in einem Datenqualitäts-Protokoll.</p>
+                        <p class="step-tech">Python/pandas</p>
+                    </li>
+                    <li>
+                        <h3>KPI definieren</h3>
+                        <p>SLA erfüllt, wenn zwischen Bearbeitungsende und geplantem Abflug genug Puffer bleibt (Schwelle je Priorität, als Annahme). Wartezeiten mit Median und P90 statt Mittelwert, weil wenige Ausreißer den Mittelwert verzerren.</p>
+                        <p class="step-tech">SQL (CTEs, Fensterfunktionen) · DAX-Entwurf</p>
+                    </li>
+                    <li>
+                        <h3>Ursachen analysieren</h3>
+                        <p>Vergleich nach Schicht und Ressourcen, Pareto der Verzögerungsursachen, Mann-Whitney-Test, Anomalieerkennung (IQR, Isolation Forest), Vorhersagemodell und ein Was-wäre-wenn-Szenario.</p>
+                        <p class="step-tech">Python/scikit-learn · SciPy</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="case-section alt">
+            <div class="container">
+                <h2>Ergebnisse</h2>
+
+                <article class="result">
+                    <h3>1. Die Nachtschicht ist der Engpass</h3>
+                    <p class="case-text">Sendungen warten nachts deutlich länger auf den Bearbeitungsbeginn. Dazu passen die höchste Incident-Rate (12,3 % statt 6,5–6,9 %) und die niedrigste SLA-Quote (86,2 % statt 90,8–91,4 %).</p>
+                    <figure class="bar-chart">
+                        <figcaption>Median-Wartezeit je Schicht, in Minuten</figcaption>
+                        <div class="bar-row" title="Nacht: 46,8 min (Median)">
+                            <span class="bar-label">Nacht</span>
+                            <span class="bar-track"><span class="bar-fill emphasis" style="width: 100%"></span></span>
+                            <span class="bar-value">46,8</span>
+                        </div>
+                        <div class="bar-row" title="Früh: 28,1 min (Median)">
+                            <span class="bar-label">Früh</span>
+                            <span class="bar-track"><span class="bar-fill" style="width: 60%"></span></span>
+                            <span class="bar-value">28,1</span>
+                        </div>
+                        <div class="bar-row" title="Spät: 25,7 min (Median)">
+                            <span class="bar-label">Spät</span>
+                            <span class="bar-track"><span class="bar-fill" style="width: 55%"></span></span>
+                            <span class="bar-value">25,7</span>
+                        </div>
+                    </figure>
+                    <p class="result-note">Simuliertes Szenario: Sinkt die Wartezeit nachts auf das Niveau der Frühschicht, steigt die SLA-Quote von 89,5 % auf 90,8 % (54 Verletzungen weniger). Ob der Effekt kausal ist, müsste ein Vorher/Nachher-Vergleich mit Kontrollgruppe zeigen.</p>
+                </article>
+
+                <article class="result">
+                    <h3>2. Ohne Bereinigung wären die Kennzahlen falsch</h3>
+                    <div class="stat-tiles">
+                        <div class="stat"><span class="stat-value">90</span><span class="stat-label">doppelte Sendungsnummern, davon 25 erst nach Normalisierung erkennbar</span></div>
+                        <div class="stat"><span class="stat-value">175</span><span class="stat-label">Sendungen „Abgeschlossen“ ohne Endzeit, als Widerspruch markiert statt aufgefüllt</span></div>
+                        <div class="stat"><span class="stat-value">32,8 <small>vs. 50,4</small></span><span class="stat-label">Minuten Wartezeit: Median gegenüber Mittelwert</span></div>
+                    </div>
+                </article>
+
+                <article class="result">
+                    <h3>3. Es gibt keine einzelne Hauptursache</h3>
+                    <p class="case-text">Die drei häufigsten Verzögerungsursachen erklären zusammen nur 45,5 % der Verzögerungen, ein klassisches 80/20-Muster fehlt. Auch das Vorhersagemodell für SLA-Verletzungen erreicht nur eine AUC von etwa 0,62–0,64: Mit den Informationen bei Ankunft lässt sich wenig vorhersagen. Das spricht für Maßnahmen an der Schichtplanung statt für ein komplexes Modell.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container">
+                <h2>Grenzen</h2>
+                <ul class="case-list">
+                    <li>Synthetische Daten: keine Aussage über einen echten Betrieb.</li>
+                    <li>Die SLA-Schwellen (Critical 120, Express 90, Standard 60 Minuten) sind Annahmen.</li>
+                    <li>Power Query (M) und DAX wurden nicht in Power BI ausgeführt; die Logik wurde nur gegen pandas geprüft.</li>
+                    <li>Das Dashboard existiert nur als PowerPoint-Mockup, nicht als Power-BI-Bericht.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-section alt">
+            <div class="container">
+                <h2>Code</h2>
+                <ul class="code-links">
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/clean_cargo.py" target="_blank" rel="noopener">clean_cargo.py</a> Bereinigung mit pandas</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/queries.sql" target="_blank" rel="noopener">queries.sql</a> SQL-Abfragen (in SQLite ausgeführt)</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/solution.py" target="_blank" rel="noopener">solution.py</a> Statistik, Anomalien, Modell, Szenario</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/incidents.ts" target="_blank" rel="noopener">incidents.ts</a> Erkennung kritischer Sendungen (TypeScript, strict)</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/measures.dax" target="_blank" rel="noopener">measures.dax</a> und <a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/shipments.m" target="_blank" rel="noopener">shipments.m</a> Entwürfe für Power BI</li>
+                </ul>
+                <a href="https://github.com/Monsieur-v237/air-cargo-performance" target="_blank" rel="noopener" class="btn primary"><i class="fab fa-github" aria-hidden="true"></i> Repository ansehen</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Vades Djoko</p>
+            <div class="social-links">
+                <a href="https://github.com/Monsieur-v237" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/vades-ngounouo-djoko-a28911255" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -58,7 +58,7 @@
             <h2 class="section-title">Über mich</h2>
             <div class="about-text">
                 <p>Ich studiere Informatik im 4. Semester an der Technischen Hochschule Mittelhessen. Im Studium konzentriere ich mich auf <strong>Datenbanksysteme und SQL</strong>, <strong>Statistik und Datenanalyse</strong>, <strong>Machine Learning</strong> und <strong>Software Engineering</strong>.</p>
-                <p>Im Projekt Simon Game habe ich das Datenmodell und die SQL-Abfragen für Spielstände und Nutzerdaten entwickelt und die Dienste mit Docker containerisiert. Meinen Weg in Richtung Data Science zeigt eine Übungs-Case-Study zur Air-Cargo-Performance; im Wintersemester 2026/27 folgt das Modul Grundlagen der Data Science.</p>
+                <p>Im Projekt Simon Game habe ich das Datenmodell und die SQL-Abfragen für Spielstände und Nutzerdaten entwickelt und die Dienste mit Docker containerisiert. Meinen Weg in Richtung Data Science zeigt eine <a href="air-cargo.html">Übungs-Case-Study zur Air-Cargo-Performance</a> mit synthetischen Daten; im Wintersemester 2026/27 folgt das Modul Grundlagen der Data Science.</p>
                 <p>Seit November 2024 arbeite ich als Werkstudent in der Lagerlogistik und engagiere mich als Generalsekretär bei Stimme Afrikas e.V. in Gießen.</p>
             </div>
         </div>
@@ -147,7 +147,7 @@
                     <ul class="learning-list">
                         <li><strong>Power BI, DAX, Power Query</strong> Messformeln im Übungsfall entworfen, noch kein produktiver Bericht</li>
                         <li><strong>Grundlagen der Data Science</strong> Modul im WiSe 2026/27</li>
-                        <li><strong>SQL-Fensterfunktionen und pandas</strong> geübt in der Air-Cargo-Case-Study</li>
+                        <li><strong>SQL-Fensterfunktionen und pandas</strong> geübt in der <a href="air-cargo.html">Air-Cargo-Case-Study</a></li>
                     </ul>
                 </div>
             </div>
@@ -230,6 +230,33 @@
                         </div>
                         <figcaption>Vereinfachte Architekturskizze nach dem README des Repos. Hervorgehoben: mein Schwerpunkt (Datenmodell und SQL); die Containerisierung betrifft alle Dienste im Rahmen.</figcaption>
                     </figure>
+                </article>
+
+                <!-- Air-Cargo Case Study -->
+                <article class="project-card">
+                    <p class="project-badge">Übungsfall · synthetische Daten</p>
+                    <h3>Air-Cargo-Performance</h3>
+                    <p class="project-subtitle">Case Study: Datenbereinigung, KPI und Ursachenanalyse</p>
+                    <dl class="project-facts">
+                        <div><dt>Frage</dt><dd>Wo verliert ein Luftfracht-Lager Zeit, und warum verfehlen Sendungen die Pufferzeit vor dem Abflug?</dd></div>
+                        <div><dt>Vorgehen</dt><dd>Bereinigung mit pandas, KPI mit Median und P90, SQL mit Fensterfunktionen, Statistik und ein einfaches Vorhersagemodell.</dd></div>
+                        <div><dt>Ergebnis</dt><dd>Nachtschicht als Engpass (Median-Wartezeit 46,8 statt 25,7–28,1 min); keine einzelne dominante Ursache.</dd></div>
+                    </dl>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">pandas</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">TypeScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="air-cargo.html" class="project-link">
+                            <i class="fas fa-chart-bar" aria-hidden="true"></i> Case Study
+                        </a>
+                        <a href="https://github.com/Monsieur-v237/air-cargo-performance" target="_blank" rel="noopener" class="project-link">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code
+                        </a>
+                    </div>
                 </article>
 
                 <!-- Portfolio -->
