@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Vades Djoko - Informatik Student</title>
+    <title>Vades Djoko | Informatik-Student, Data &amp; Softwareentwicklung</title>
+    <meta name="description" content="Informatik-Student (B.Sc., THM Gießen) mit Schwerpunkt Datenbanken, Datenanalyse und Backend-Entwicklung. Projekte, Case Study und Kontakt.">
+    <link rel="canonical" href="https://monsieur-v237.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="Vades Djoko | Informatik-Student, Data &amp; Softwareentwicklung">
+    <meta property="og:description" content="B.Sc. Informatik an der THM Gießen. Datenbanken, Datenanalyse, Backend. Projekte mit Code auf GitHub.">
+    <meta property="og:url" content="https://monsieur-v237.github.io/portfolio/">
+    <meta property="og:image" content="https://monsieur-v237.github.io/portfolio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome für Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -26,7 +40,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section / Home -->
+    <main id="main">
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-text">
@@ -300,11 +315,19 @@
                     <p>Ich bin ab sofort für eine Werkstudentenstelle oder ein Praktikum in <strong>Data/BI, Softwareentwicklung oder IT-Prozessen</strong> verfügbar und freue mich über Ihre Nachricht.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:vades.djoko@gmail.com">vades.djoko@gmail.com</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <a href="https://www.linkedin.com/in/vades-ngounouo-djoko-a28911255" target="_blank" rel="noopener">LinkedIn-Profil</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <a href="https://github.com/Monsieur-v237" target="_blank" rel="noopener">github.com/Monsieur-v237</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <span>Gießen, Deutschland</span>
                         </div>
                     </div>
@@ -312,19 +335,22 @@
                 <div class="contact-cta">
                     <h3>Am schnellsten per E-Mail</h3>
                     <p>Ein Klick öffnet Ihr E-Mail-Programm mit vorausgefülltem Betreff.</p>
-                    <a href="mailto:vades.djoko@gmail.com?subject=Anfrage%20%C3%BCber%20Ihr%20Portfolio" class="btn primary"><i class="fas fa-envelope"></i> E-Mail schreiben</a>
+                    <a href="mailto:vades.djoko@gmail.com?subject=Anfrage%20%C3%BCber%20Ihr%20Portfolio" class="btn primary"><i class="fas fa-envelope" aria-hidden="true"></i> E-Mail schreiben</a>
+                    <a href="CV_Vades_Djoko.pdf" class="btn secondary" data-cv hidden download><i class="fas fa-file-pdf" aria-hidden="true"></i> CV herunterladen</a>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Vades Djoko. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Vades Djoko</p>
             <div class="social-links">
-                <a href="https://github.com/Monsieur-v237" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/vades-ngounouo-djoko-a28911255" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Monsieur-v237" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/vades-ngounouo-djoko-a28911255" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
             </div>
         </div>
     </footer>
