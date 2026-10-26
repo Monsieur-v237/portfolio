@@ -17,16 +17,6 @@ navMenu.addEventListener('click', (event) => {
     if (event.target.closest('a')) setMenu(false);
 });
 
-// CV-Buttons erst zeigen, wenn die PDF im Repo liegt (vermeidet tote Links)
-const cvLinks = document.querySelectorAll('[data-cv]');
-if (cvLinks.length) {
-    fetch(cvLinks[0].getAttribute('href'), { method: 'HEAD' })
-        .then((response) => {
-            if (response.ok) cvLinks.forEach((link) => { link.hidden = false; });
-        })
-        .catch(() => {});
-}
-
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && navMenu.classList.contains('open')) {
         setMenu(false);

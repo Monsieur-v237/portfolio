@@ -27,9 +27,13 @@ Persönliche Portfolio-Website: Informatik-Student (B.Sc.) an der THM Gießen mi
 | `index.html` | Startseite |
 | `air-cargo.html` | Case Study Air-Cargo-Performance |
 | `style.css` | Gestaltung für beide Seiten |
-| `script.js` | Mobiles Menü; blendet den CV-Button ein, sobald `CV_Vades_Djoko.pdf` vorhanden ist |
+| `script.js` | Mobiles Menü |
 | `favicon.svg`, `og-image.png` | Favicon und Vorschaubild |
+
+## CV einbinden
+
+Die beiden Links „CV herunterladen“ in `index.html` (Hero und Kontakt, Attribut `data-cv`) sind mit `hidden` ausgeblendet, solange keine PDF im Repo liegt. Zum Aktivieren `CV_Vades_Djoko.pdf` ins Hauptverzeichnis legen und bei beiden Links `hidden` entfernen.
 
 ## Lokal ansehen
 
-`index.html` im Browser öffnen. Der CV-Button erscheint nur, wenn die Seite über einen Webserver läuft und `CV_Vades_Djoko.pdf` im Hauptverzeichnis liegt.
+`index.html` im Browser öffnen, kein Build-Schritt nötig.
