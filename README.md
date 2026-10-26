@@ -17,7 +17,8 @@ Persönliche Portfolio-Website: Informatik-Student (B.Sc.) an der THM Gießen mi
 - Responsive mit mobilem Menü (`aria-expanded`, Escape schließt)
 - Architekturskizze als Inline-SVG mit Textalternative
 - Meta- und Open-Graph-Tags für die Link-Vorschau
-- Icons: Font Awesome 6.5.2 über cdnjs
+- Icons: Font Awesome Free 6.5.2, lokal eingebunden unter `vendor/fontawesome/` (keine Anfragen an Drittanbieter)
+- Helles und dunkles Design (Systemstandard, Wahl wird im Browser gespeichert)
 - Hosting: GitHub Pages
 
 ## Dateien
@@ -26,13 +27,12 @@ Persönliche Portfolio-Website: Informatik-Student (B.Sc.) an der THM Gießen mi
 |---|---|
 | `index.html` | Startseite |
 | `air-cargo.html` | Case Study Air-Cargo-Performance |
-| `style.css` | Gestaltung für beide Seiten |
-| `script.js` | Mobiles Menü |
+| `impressum.html`, `datenschutz.html` | Impressum und Datenschutzerklärung |
+| `style.css` | Gestaltung für alle Seiten |
+| `script.js` | Design-Umschalter und mobiles Menü |
+| `CV_Vades_Djoko.pdf` | Lebenslauf zum Download (Hero und Kontakt) |
 | `favicon.svg`, `og-image.png` | Favicon und Vorschaubild |
-
-## CV einbinden
-
-Die beiden Links „CV herunterladen“ in `index.html` (Hero und Kontakt, Attribut `data-cv`) sind mit `hidden` ausgeblendet, solange keine PDF im Repo liegt. Zum Aktivieren `CV_Vades_Djoko.pdf` ins Hauptverzeichnis legen und bei beiden Links `hidden` entfernen.
+| `vendor/fontawesome/` | Font Awesome Free (Lizenz im CSS-Kopf) |
 
 ## Lokal ansehen
 
