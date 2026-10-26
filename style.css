@@ -351,7 +351,7 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     width: 100%;
     margin: 0 auto;
@@ -989,4 +989,32 @@ footer .container {
     .timeline {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+/* ===== AKTUELL AM LERNEN ===== */
+.skill-category.learning {
+    border: 2px dashed rgba(37, 99, 235, 0.35);
+    box-shadow: none;
+    background: var(--light-bg);
+}
+
+.learning-list {
+    list-style: none;
+}
+
+.learning-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.learning-list li:last-child {
+    border-bottom: none;
+}
+
+.learning-list strong {
+    display: block;
+    color: #34495e;
+    font-size: 0.95rem;
 }
