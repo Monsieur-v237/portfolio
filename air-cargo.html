@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air-Cargo-Performance (Übungsfall) | Vades Djoko</title>
-    <meta name="description" content="Lernprojekt mit synthetischen Daten: Datenbereinigung, KPI-Definition und Ursachenanalyse für ein Luftfracht-Lager mit Python, SQL und TypeScript.">
+    <meta name="description" content="Lernprojekt mit KI-generiertem Datensatz: Datenbereinigung in Power BI (Power Query), KPI-Definition und Ursachenanalyse für ein Luftfracht-Lager mit SQL und Python.">
     <link rel="canonical" href="https://monsieur-v237.github.io/portfolio/air-cargo.html">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="de_DE">
     <meta property="og:title" content="Air-Cargo-Performance (Übungsfall) | Vades Djoko">
-    <meta property="og:description" content="Lernprojekt mit synthetischen Daten: Datenbereinigung, KPI-Definition und Ursachenanalyse mit Python, SQL und TypeScript.">
+    <meta property="og:description" content="Lernprojekt mit KI-generiertem Datensatz: Datenbereinigung in Power BI (Power Query), KPI-Definition und Ursachenanalyse mit SQL und Python.">
     <meta property="og:url" content="https://monsieur-v237.github.io/portfolio/air-cargo.html">
     <meta property="og:image" content="https://monsieur-v237.github.io/portfolio/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -30,11 +30,11 @@
     <main class="case" id="main">
         <header class="case-header">
             <div class="container">
-                <p class="case-badge"><i class="fas fa-flask" aria-hidden="true"></i> Übungsfall mit synthetischen Daten · Lernprojekt</p>
+                <p class="case-badge"><i class="fas fa-flask" aria-hidden="true"></i> Übungsfall mit KI-generiertem Datensatz · Lernprojekt</p>
                 <h1>Air-Cargo-Performance</h1>
                 <p class="case-lead">Wo verliert ein Luftfracht-Lager Zeit, welche Sendungen verfehlen die Pufferzeit vor dem Abflug, und woran liegt das?</p>
                 <div class="case-notice" role="note">
-                    <strong>Hinweis:</strong> Kein Kunden- oder Firmenprojekt. Der Datensatz ist künstlich erzeugt und enthält absichtlich eingebaute Fehler. Die Zahlen beschreiben keinen echten Betrieb.
+                    <strong>Hinweis:</strong> Kein Kunden- oder Firmenprojekt. Der Datensatz wurde mit KI generiert und enthält absichtlich eingebaute Fehler. Die Zahlen beschreiben keinen echten Betrieb.
                 </div>
             </div>
         </header>
@@ -46,8 +46,8 @@
                 <ol class="steps">
                     <li>
                         <h3>Daten bereinigen</h3>
-                        <p>Schreibweisen von Schicht, Zone und Airline vereinheitlichen, gemischte Datumsformate parsen, <em>danach</em> Duplikate entfernen. Unplausible Werte werden geleert statt geraten; jede Änderung landet in einem Datenqualitäts-Protokoll.</p>
-                        <p class="step-tech">Python/pandas</p>
+                        <p>In Power BI Desktop mit Power Query: Schreibweisen von Schicht, Zone und Airline vereinheitlichen, gemischte Datumsformate parsen, <em>danach</em> Duplikate entfernen. Unplausible Werte werden geleert statt geraten und als Datenqualitäts-Problem markiert.</p>
+                        <p class="step-tech">Power BI Desktop · Power Query (M)</p>
                     </li>
                     <li>
                         <h3>KPI definieren</h3>
@@ -111,9 +111,9 @@
             <div class="container">
                 <h2>Grenzen</h2>
                 <ul class="case-list">
-                    <li>Synthetische Daten: keine Aussage über einen echten Betrieb.</li>
+                    <li>KI-generierter Datensatz: keine Aussage über einen echten Betrieb.</li>
                     <li>Die SLA-Schwellen (Critical 120, Express 90, Standard 60 Minuten) sind Annahmen.</li>
-                    <li>Power Query (M) und DAX wurden nicht in Power BI ausgeführt; die Logik wurde nur gegen pandas geprüft.</li>
+                    <li>Die DAX-Measures sind Entwürfe; ihre Logik wurde gegen die Python-Auswertung geprüft.</li>
                     <li>Das Dashboard existiert nur als PowerPoint-Mockup, nicht als Power-BI-Bericht.</li>
                 </ul>
             </div>
@@ -123,11 +123,12 @@
             <div class="container">
                 <h2>Code</h2>
                 <ul class="code-links">
-                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/clean_cargo.py" target="_blank" rel="noopener">clean_cargo.py</a> Bereinigung mit pandas</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/shipments.m" target="_blank" rel="noopener">shipments.m</a> Bereinigung mit Power Query (M)</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/clean_cargo.py" target="_blank" rel="noopener">clean_cargo.py</a> dieselben Bereinigungsregeln mit pandas</li>
                     <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/queries.sql" target="_blank" rel="noopener">queries.sql</a> SQL-Abfragen (in SQLite ausgeführt)</li>
                     <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/solution.py" target="_blank" rel="noopener">solution.py</a> Statistik, Anomalien, Modell, Szenario</li>
                     <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/incidents.ts" target="_blank" rel="noopener">incidents.ts</a> Erkennung kritischer Sendungen (TypeScript, strict)</li>
-                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/measures.dax" target="_blank" rel="noopener">measures.dax</a> und <a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/shipments.m" target="_blank" rel="noopener">shipments.m</a> Entwürfe für Power BI</li>
+                    <li><a href="https://github.com/Monsieur-v237/air-cargo-performance/blob/main/code/measures.dax" target="_blank" rel="noopener">measures.dax</a> DAX-Measures (Entwurf)</li>
                 </ul>
                 <a href="https://github.com/Monsieur-v237/air-cargo-performance" target="_blank" rel="noopener" class="btn primary"><i class="fab fa-github" aria-hidden="true"></i> Repository ansehen</a>
             </div>

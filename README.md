@@ -8,7 +8,7 @@ Persönliche Portfolio-Website: Informatik-Student (B.Sc.) an der THM Gießen mi
 
 - Über mich, Studium und Erfahrung
 - Kenntnisse inklusive „Aktuell am Lernen“
-- Projekte: [Simon Game](https://github.com/Monsieur-v237/simon_game) (Microservices, Java, Vert.x, MariaDB, Docker) und die Case Study [Air-Cargo-Performance](air-cargo.html) (Übungsfall mit synthetischen Daten, Code in [air-cargo-performance](https://github.com/Monsieur-v237/air-cargo-performance))
+- Projekte: [Simon Game](https://github.com/Monsieur-v237/simon_game) (Microservices, Java, Vert.x, MariaDB, Docker) und die Case Study [Air-Cargo-Performance](air-cargo.html) (Übungsfall mit KI-generiertem Datensatz, Code in [air-cargo-performance](https://github.com/Monsieur-v237/air-cargo-performance))
 - Kontakt per E-Mail, LinkedIn und GitHub
 
 ## Technik

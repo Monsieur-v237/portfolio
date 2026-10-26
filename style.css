@@ -1395,3 +1395,14 @@ html {
     margin-top: 0.4rem;
     list-style: circle;
 }
+
+@media (min-width: 769px) {
+    .timeline {
+        grid-template-columns: 1.4fr 1fr;
+    }
+
+    .timeline-main {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+}
