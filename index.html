@@ -12,13 +12,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">Vades Djoko</div>
+            <a href="#home" class="logo">Vades Djoko</a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">Über mich</a></li>
+                <li><a href="#experience">Erfahrung</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projekte</a></li>
                 <li><a href="#contact">Kontakt</a></li>
@@ -30,20 +30,25 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-text">
-                <h1>Hallo, ich bin <span class="highlight">Vades !</span></h1>
-                <h2>Informatik Student & angehender Werkstudent</h2>
-                <p>Bachelor of Science Informatik an der THM</p>
+                <h1>Hallo, ich bin <span class="highlight">Vades Djoko</span></h1>
+                <p class="hero-lead">Informatik-Student im 4. Semester an der THM Gießen mit Schwerpunkt Datenbanken, Datenanalyse und Backend-Entwicklung, auf der Suche nach einer Werkstudentenstelle oder einem Praktikum in Data/BI, Softwareentwicklung oder IT-Prozessen.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn primary">Kontakt aufnehmen</a>
-                    <a href="https://github.com/Monsieur-v237" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub Profil</a>
+                    <a href="#projects" class="btn primary">Projekte ansehen</a>
+                    <a href="CV_Vades_Djoko.pdf" class="btn secondary" data-cv hidden download><i class="fas fa-file-pdf" aria-hidden="true"></i> CV herunterladen</a>
+                    <a href="#contact" class="btn secondary">Kontakt</a>
                 </div>
+                <a class="hero-github" href="https://github.com/Monsieur-v237" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> github.com/Monsieur-v237</a>
             </div>
-            <div class="hero-image">
-                <!-- Platzhalter für Ihr Foto -->
-                <div class="profile-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>
+            <aside class="glance" aria-label="Auf einen Blick">
+                <h2>Auf einen Blick</h2>
+                <dl>
+                    <div><dt>Studium</dt><dd>B.Sc. Informatik, THM Gießen, seit 10/2024</dd></div>
+                    <div><dt>Erfahrung</dt><dd>Werkstudent Lagerlogistik seit 11/2024</dd></div>
+                    <div><dt>Schwerpunkte</dt><dd>SQL &amp; Datenbanken, Statistik, Machine Learning, Software Engineering</dd></div>
+                    <div><dt>Sprachen</dt><dd>Deutsch (C1), Französisch (fließend), Englisch (Grundlagen)</dd></div>
+                    <div><dt>Verfügbarkeit</dt><dd>Ab sofort · Standort Gießen</dd></div>
+                </dl>
+            </aside>
         </div>
     </section>
 
@@ -51,26 +56,43 @@
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">Über mich</h2>
-            <div class="about-content">
-                <div class="about-text">
-                   <p>Ich bin Informatik-Student an der Technischen Hochschule Mittelhessen mit einer Leidenschaft für <strong>Webentwicklung</strong> und <strong>verteilte Systeme</strong>. Mein Fokus liegt auf der Entwicklung skalierbarer Backend-Systeme mit Vert.x und der Integration verschiedener Technologien zu vollständigen, containerisierten Anwendungen.</p>
-                    <p>Ich spreche fließend Deutsch (C1) und Französisch. Außerdem habe ich Grundkenntnisse in kreativen Tools wie <strong>Photoshop, Premiere Pro und Figma</strong>.</p>
-                    <p>Auf meinem <a href="https://github.com/Monsieur-v237" target="_blank">GitHub-Profil</a> findest du meine bisherigen Projekte – darunter ein komplexes Simon Game mit Microservice-Architektur. Ich suche eine spannende Werkstudententätigkeit, um meine Kenntnisse in der Praxis anzuwenden und weiterzuentwickeln. <strong>In Zukunft möchte ich gerne im Bereich Data Science arbeiten</strong> und meine Python-Kenntnisse vertiefen.</p>
-                </div>
-                <div class="about-info">
-                    <div class="info-item">
-                        <span class="info-label">Sprachen:</span>
-                        <span class="info-value">Deutsch (C1), Französisch (fließend), Englisch (Grundlagen)</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Studium:</span>
-                        <span class="info-value">B.Sc. Informatik, THM (seit WiSe 24/25)</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Verfügbarkeit:</span>
-                        <span class="info-value">Ab sofort als Werkstudent</span>
-                    </div>
-                </div>
+            <div class="about-text">
+                <p>Ich studiere Informatik im 4. Semester an der Technischen Hochschule Mittelhessen. Im Studium konzentriere ich mich auf <strong>Datenbanksysteme und SQL</strong>, <strong>Statistik und Datenanalyse</strong>, <strong>Machine Learning</strong> und <strong>Software Engineering</strong>.</p>
+                <p>Im Projekt Simon Game habe ich das Datenmodell und die SQL-Abfragen für Spielstände und Nutzerdaten entwickelt und die Dienste mit Docker containerisiert. Meinen Weg in Richtung Data Science zeigt eine Übungs-Case-Study zur Air-Cargo-Performance; im Wintersemester 2026/27 folgt das Modul Grundlagen der Data Science.</p>
+                <p>Seit November 2024 arbeite ich als Werkstudent in der Lagerlogistik und engagiere mich als Generalsekretär bei Stimme Afrikas e.V. in Gießen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studium & Erfahrung -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Studium und Erfahrung</h2>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <p class="timeline-date">seit 11/2024</p>
+                    <h3>Werkstudent Lagerlogistik</h3>
+                    <p class="timeline-org">Heizungsdiscount24 GmbH, Gießen</p>
+                    <ul>
+                        <li>Kommissionierung, Verpackung und Einlagerung</li>
+                        <li>Staplerfahren</li>
+                        <li>Teamabstimmung unter Zeitvorgaben</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <p class="timeline-date">seit 10/2024</p>
+                    <h3>B.Sc. Informatik (4. Semester)</h3>
+                    <p class="timeline-org">Technische Hochschule Mittelhessen (THM), Gießen</p>
+                    <ul>
+                        <li>Schwerpunkte: Machine Learning, Datenbanksysteme (SQL: Abfragen, Joins, Aggregationen), Software Engineering, Interaktive Systeme, Statistik/Datenanalyse</li>
+                        <li>Geplant im WiSe 2026/27: Grundlagen der Data Science</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <p class="timeline-date">Engagement</p>
+                    <h3>Generalsekretär</h3>
+                    <p class="timeline-org">Stimme Afrikas e.V., Gießen</p>
+                </article>
             </div>
         </div>
     </section>
@@ -218,7 +240,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Interesse an einer Zusammenarbeit?</h3>
-                     <p>Ich bin ab sofort als Werkstudent verfügbar und freue mich über Ihre Nachricht! Mein Schwerpunkt liegt auf <strong>Webentwicklung und verteilten Systemen</strong> mit Java, Vert.x und Docker. <strong>Langfristig möchte ich in den Bereich Data Science einsteigen</strong> und meine Python-Kenntnisse ausbauen.</p>
+                    <p>Ich bin ab sofort für eine Werkstudentenstelle oder ein Praktikum in <strong>Data/BI, Softwareentwicklung oder IT-Prozessen</strong> verfügbar und freue mich über Ihre Nachricht.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>

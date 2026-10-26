@@ -72,6 +72,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    text-decoration: none;
 }
 
 .nav-menu {
@@ -196,22 +197,68 @@ body {
     transform: translateY(-2px);
 }
 
-.profile-placeholder {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    box-shadow: var(--shadow);
+.hero-text .hero-lead {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
 }
 
-.profile-placeholder i {
-    font-size: 15rem;
-    color: var(--white);
-    opacity: 0.8;
+.hero-buttons {
+    flex-wrap: wrap;
+}
+
+.btn[hidden] {
+    display: none;
+}
+
+.hero-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero-github:hover {
+    color: var(--primary-color);
+}
+
+.glance {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.glance h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-dark);
+}
+
+.glance dl > div {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.glance dl > div:last-child {
+    border-bottom: none;
+}
+
+.glance dt {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+}
+
+.glance dd {
+    color: var(--text-dark);
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -220,10 +267,9 @@ body {
     background: var(--white);
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-text p {
@@ -232,26 +278,59 @@ body {
     font-size: 1.1rem;
 }
 
-.about-info {
+.about-text a {
+    color: var(--primary-color);
+}
+
+/* ===== STUDIUM & ERFAHRUNG ===== */
+.experience {
+    padding: 5rem 0;
     background: var(--light-bg);
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.timeline-item {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
     padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.info-item {
-    margin-bottom: 1.5rem;
-}
-
-.info-label {
-    display: block;
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
 }
 
-.info-value {
+.timeline-item h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.timeline-org {
     color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.timeline-item ul {
+    padding-left: 1.2rem;
+    color: var(--text-light);
+}
+
+.timeline-item li {
+    margin-bottom: 0.4rem;
 }
 
 /* ===== SKILLS SECTION ===== */
@@ -857,21 +936,25 @@ footer .container {
         font-size: 2.5rem;
     }
 
-    .profile-placeholder {
-        width: 300px;
-        height: 300px;
+    .hero {
+        min-height: auto;
+        padding: 110px 0 4rem;
     }
 
-    .profile-placeholder i {
-        font-size: 10rem;
+    .hero-container {
+        gap: 2.5rem;
     }
 
     .hero-buttons {
         justify-content: center;
     }
 
-    .about-info {
+    .glance {
         text-align: left;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
     }
 
     .skills-grid {
@@ -900,5 +983,10 @@ footer .container {
 @media (max-width: 600px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+    .timeline {
+        grid-template-columns: 1fr 1fr;
     }
 }
