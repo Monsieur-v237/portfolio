@@ -85,7 +85,7 @@
             <h2 class="section-title">Über mich</h2>
             <div class="about-text">
                 <p>Ich studiere Informatik im 5. Semester an der Technischen Hochschule Mittelhessen. Im Studium konzentriere ich mich auf <strong>Datenbanksysteme und SQL</strong>, <strong>Statistik und Datenanalyse</strong>, <strong>Machine Learning</strong> und <strong>Software Engineering</strong>; in diesem Semester belege ich <strong>Business Intelligence</strong> und <strong>Grundlagen der Data Science</strong>.</p>
-                <p>Im Projekt Simon Game habe ich das Datenmodell und die SQL-Abfragen für Spielstände und Nutzerdaten entwickelt und die Dienste mit Docker containerisiert. Meinen Weg in Richtung Data und BI zeigt eine <a href="air-cargo.html">Übungs-Case-Study zur Air-Cargo-Performance</a> mit einem KI-generierten Datensatz, den ich in Power BI Desktop mit Power Query bereinigt habe.</p>
+                <p>Im Projekt Simon Game habe ich das Datenmodell und die SQL-Abfragen für Spielstände und Nutzerdaten entwickelt und die Dienste mit Docker containerisiert. Im Modul Deep Learning habe ich im Zweierteam mit PyTorch ein <a href="#projects">CNN zur Bildklassifikation und ein LSTM zur Musikgenerierung</a> umgesetzt. Meinen Weg in Richtung Data und BI zeigt eine <a href="air-cargo.html">Übungs-Case-Study zur Air-Cargo-Performance</a> mit einem KI-generierten Datensatz, den ich in Power BI Desktop mit Power Query bereinigt habe.</p>
                 <p>Seit November 2024 arbeite ich als Werkstudent in der Lagerlogistik und engagiere mich als Generalsekretär bei Stimme Afrikas e.V. in Gießen.</p>
             </div>
         </div>
@@ -112,6 +112,7 @@
                     <p class="timeline-org">Technische Hochschule Mittelhessen (THM), Gießen</p>
                     <ul>
                         <li>Schwerpunkte: Machine Learning, Datenbanksysteme (SQL: Abfragen, Joins, Aggregationen), Software Engineering, Interaktive Systeme, Statistik/Datenanalyse</li>
+                        <li>SoSe 2026: Deep Learning (Projekte: CNN-Bildklassifikation, RNN-Musikgenerierung)</li>
                         <li>Aktuell im WiSe 2026/27:
                             <ul class="module-list">
                                 <li><strong>Business Intelligence:</strong> Data Warehousing, BI-Referenzarchitektur, multidimensionale Datenmodellierung, OLAP, Fallstudien mit SAP BW/4HANA</li>
@@ -188,6 +189,7 @@
                         <li><strong>Power BI und Power Query</strong> Datenbereinigung im Übungsfall in Power BI Desktop; DAX-Measures entworfen</li>
                         <li><strong>Business Intelligence und Data Science</strong> Module im WiSe 2026/27 (Data Warehousing, OLAP, SAP BW/4HANA)</li>
                         <li><strong>SQL-Fensterfunktionen und pandas</strong> geübt in der <a href="air-cargo.html">Air-Cargo-Case-Study</a></li>
+                        <li><strong>Deep Learning mit PyTorch</strong> CNN und LSTM in Teamprojekten im Modul Deep Learning umgesetzt</li>
                     </ul>
                 </div>
             </div>
@@ -270,6 +272,65 @@
                         </div>
                         <figcaption>Vereinfachte Architekturskizze nach dem README des Repos. Hervorgehoben: mein Schwerpunkt (Datenmodell und SQL); die Containerisierung betrifft alle Dienste im Rahmen.</figcaption>
                     </figure>
+                </article>
+
+                <!-- Clothing CNN -->
+                <article class="project-card">
+                    <p class="project-badge project-badge-team">Teamprojekt · Modul Deep Learning</p>
+                    <h3>Kleidungsklassifikation mit einem CNN</h3>
+                    <p class="project-subtitle">Eigenes Convolutional Neural Network in PyTorch, ohne vortrainierte Gewichte</p>
+                    <figure class="project-image">
+                        <img src="images/cnn-konfusionsmatrix.png" width="898" height="799" loading="lazy"
+                             alt="Konfusionsmatrix des CNN auf dem Testsplit: pants (62 von 83) und socks (53 von 73) werden am häufigsten richtig erkannt, long-sleeved wird oft mit t-shirt verwechselt.">
+                        <figcaption>Konfusionsmatrix auf dem Testsplit (391 Bilder)</figcaption>
+                    </figure>
+                    <dl class="project-facts">
+                        <div><dt>Problem</dt><dd>Fotos von Kleidungsstücken einer von fünf Klassen zuordnen (long-sleeved, pants, shorts, socks, t-shirt); 3.899 Bilder in sehr unterschiedlichen Auflösungen.</dd></div>
+                        <div><dt>Vorgehen</dt><dd>Datenanalyse, Augmentierung, Train/Val/Test-Split, CNN mit 4 Faltungsblöcken (ca. 456.000 Parameter), Lernraten-Scheduling, Early Stopping, Tracking mit Weights &amp; Biases.</dd></div>
+                        <div><dt>Ergebnis</dt><dd>53,7 % Genauigkeit auf dem Testsplit und 55,6 % auf einem externen Testdatensatz (Zufall: 20 %). Fehleranalyse zeigt Verwechslungen ähnlicher Klassen; nächster Schritt wäre Transfer Learning.</dd></div>
+                        <div><dt>Team</dt><dd>Zweierteam mit Lister Melaguie</dd></div>
+                    </dl>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">torchvision</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">W&amp;B</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Monsieur-v237/clothing-cnn" target="_blank" rel="noopener" class="project-link">
+                            <i class="fab fa-github" aria-hidden="true"></i> Repository
+                        </a>
+                    </div>
+                </article>
+
+                <!-- RNN Musikgenerierung -->
+                <article class="project-card">
+                    <p class="project-badge project-badge-team">Teamprojekt · Modul Deep Learning</p>
+                    <h3>Musikgenerierung mit einem RNN</h3>
+                    <p class="project-subtitle">Zeichenbasiertes LSTM-Sprachmodell für Melodien in ABC-Notation</p>
+                    <figure class="project-image">
+                        <img src="images/rnn-lernkurve.png" width="576" height="453" loading="lazy"
+                             alt="Lernkurve über 5 Epochen: Trainingsverlust sinkt von 1,14 auf 0,84, Validierungsverlust von 0,95 auf 0,82.">
+                        <figcaption>Trainings- und Validierungsverlust über 5 Epochen</figcaption>
+                    </figure>
+                    <dl class="project-facts">
+                        <div><dt>Problem</dt><dd>Aus über 200.000 Musikstücken in ABC-Notation das nächste Zeichen vorhersagen und damit neue, plausible Melodien erzeugen.</dd></div>
+                        <div><dt>Vorgehen</dt><dd>LSTM mit 2 Schichten (ca. 3,75 Mio. Parameter), Training auf CPU, Generierung mit Temperatur und Top-k-Sampling; Ablationsstudie LSTM vs. GRU vs. BiLSTM, Grammatikprüfung und eigene Audio-Synthese (WAV).</dd></div>
+                        <div><dt>Ergebnis</dt><dd>73,1 % Top-1- und 94,0 % Top-5-Genauigkeit bei der Next-Token-Vorhersage. Der scheinbar bessere BiLSTM wurde als Data Leakage erkannt.</dd></div>
+                        <div><dt>Team</dt><dd>Zweierteam mit Lister Melaguie Doungue</dd></div>
+                    </dl>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">LSTM/GRU</span>
+                        <span class="tech-tag">W&amp;B</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Monsieur-v237/rnn" target="_blank" rel="noopener" class="project-link">
+                            <i class="fab fa-github" aria-hidden="true"></i> Repository
+                        </a>
+                    </div>
                 </article>
 
                 <!-- Air-Cargo Case Study -->

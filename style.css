@@ -1553,3 +1553,33 @@ footer p a {
 footer p a:hover {
     color: #93c5fd;
 }
+
+/* ===== PROJEKTBILDER & TEAM-BADGE ===== */
+.project-badge.project-badge-team {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--secondary-color);
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+.project-image {
+    margin: 0 0 1.25rem;
+}
+
+/* Diagramme haben einen weißen Hintergrund, daher auch im dunklen Design hell rahmen */
+.project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: contain;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+}
+
+.project-image figcaption {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
